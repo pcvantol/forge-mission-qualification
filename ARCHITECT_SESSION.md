@@ -18,7 +18,8 @@ a separately authorized objective.
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
-#18. The governance-only Finalization for run
-`inbox-5fa3148502e64093aca6b00c52651211` is pending in draft Finalization PR
-#19. Prompt History remains immutable in the Engineering Platform and is not
-reproduced or revised here.
+#18, and the governance-only Finalization for run
+`inbox-5fa3148502e64093aca6b00c52651211` is merged through Finalization PR #19.
+The canonical rolling records are reconciled to that delivered state. Prompt
+History remains immutable in the Engineering Platform and is not reproduced or
+revised here.
