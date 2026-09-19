@@ -21,12 +21,18 @@
   plus non-positive scale rejection.
 - Existing record, positive-quantity, batch, and smoke controls remain the
   regression surface.
-- Run the complete acceptance surface with
-  `python3 -m unittest discover -s acceptance -t . -p '*.py'`; the explicit pattern
-  includes `acceptance.grouped_batch_contract`.
-- Independent Quality and Security assurance completed without blocking
-  findings. Exceptionally large integer input remains a known non-blocking
-  availability observation because input size is not explicitly bounded.
+- Run the objective-specific acceptance surface by naming
+  `acceptance.grouped_batch_contract`, `acceptance.prefixed_name_contract`,
+  `acceptance.test_batch_records`, `acceptance.test_invalid_record`,
+  `acceptance.test_positive_record`, `acceptance.test_scaled_quantity`, and the
+  existing `acceptance.test_valid_record` control. Repository-wide discovery
+  also collects `acceptance.selected_batch_contract`; its two positive
+  selection tests fail because `--select` is outside this increment and is not
+  implemented.
+- Independent Quality and Security assurance of the implementation completed
+  without blocking findings. Exceptionally large integer input remains a known
+  non-blocking availability observation because input size is not explicitly
+  bounded.
 
 ## Governance boundary
 

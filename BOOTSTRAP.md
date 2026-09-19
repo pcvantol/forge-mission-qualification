@@ -6,9 +6,11 @@ delivery baseline.
 
 The installed `mission-parser` entrypoint is defined in `mission_parser/cli.py`.
 The acceptance controls in `acceptance/` exercise its malformed-record and
-valid-record behavior. Run the complete acceptance surface, including the
-nonstandard grouping module name, with
-`python3 -m unittest discover -s acceptance -t . -p '*.py'`.
+valid-record behavior. Repository-wide discovery with
+`python3 -m unittest discover -s acceptance -t . -p '*.py'` includes all
+modules, including contracts for capabilities that may be outside a bounded
+transaction. Use the transaction's named acceptance modules to determine its
+result.
 
 Changes to this repository are delivered through protected pull requests with
 the required smoke check. Operational credentials, receipts, local paths, and

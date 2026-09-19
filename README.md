@@ -39,8 +39,10 @@ In batch mode, `--group` combines repeated names after scaling while preserving
 first-seen order. Omitting `--group` preserves ordered, ungrouped output, and
 single-record mode remains unchanged. The independent control is
 `acceptance.grouped_batch_contract`. Because that module does not use the
-default `test*.py` discovery name, run the complete acceptance surface with
-`python3 -m unittest discover -s acceptance -t . -p '*.py'`.
+default `test*.py` discovery name, name it explicitly when validating grouping.
+Repository-wide discovery with the `*.py` pattern also collects capability
+contracts outside a bounded transaction and does not by itself establish that
+transaction's result.
 
 The optional `--prefix` argument prepends its value to each emitted name in
 installed single-record and batch modes. Omitting it preserves established

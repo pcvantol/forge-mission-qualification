@@ -9,9 +9,12 @@ selection behavior was added.
 
 ## Evidence posture
 
-The delivered candidate passed the dedicated prefixing, grouping, and scaling
-acceptance controls, the full acceptance suite, and the smoke suite. Independent
-Quality and Security reviews completed without blocking findings. Exceptionally large
+The delivered candidate passed the objective-specific prefixing, grouping,
+scaling, existing single and batch, invalid-input, and smoke controls. Broader
+acceptance discovery also collects the out-of-scope selection contract; its two
+positive `--select` tests fail because this increment deliberately adds no
+selection behavior. Independent Quality and Security reviews of the
+implementation completed without blocking findings. Exceptionally large
 integer input remains a known non-blocking availability observation because
 input size is not explicitly bounded. The implementation delta is limited to
 `mission_parser/cli.py`.
