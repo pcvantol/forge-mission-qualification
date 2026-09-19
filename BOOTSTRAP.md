@@ -15,11 +15,11 @@ Mission runtime state do not belong in this repository.
 ## Current engineering state
 
 Positive quantity scaling is implemented for installed single-record and batch
-modes by implementation PR #9. Omitting `--scale` preserves canonical unscaled
+modes by implementation PR #13. Omitting `--scale` preserves canonical unscaled
 output, while malformed records, non-positive quantities, and non-positive
 scales remain rejected.
 
 The implementation is present on protected `main`. Governance handoff for run
-`inbox-3ce6c0480ba64f208b05571acffba732` is pending its Finalization PR. Prompt
+`inbox-86fff22fa7e7488d9db1ba9e0a4edb95` is pending its Finalization PR. Prompt
 History remains an immutable Engineering Platform record and is not copied into
 this repository.

@@ -35,6 +35,6 @@ quantities. Omitting the option retains the prior output, and a non-positive
 scale is rejected without emitting a result. The independent control is
 `acceptance.test_scaled_quantity`.
 
-Implementation PR #9 is merged on protected `main`. The current governance
-handoff is run `inbox-3ce6c0480ba64f208b05571acffba732`; its Prompt History
+Implementation PR #13 is merged on protected `main`. The current governance
+handoff is run `inbox-86fff22fa7e7488d9db1ba9e0a4edb95`; its Prompt History
 remains immutable in the Engineering Platform.
