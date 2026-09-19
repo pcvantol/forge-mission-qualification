@@ -19,3 +19,19 @@ still pass.
 
 This repository's protected `main` branch and review/check records are part
 of the qualification evidence. No production Mission uses this repository.
+
+## Next bounded qualification objective
+
+The installed command currently accepts zero and negative quantities. The next
+behavioral objective requires positive quantities for single records, while
+preserving the existing canonical output for valid records.
+
+The same objective adds an installed `--batch` mode. Given comma-separated
+`name:quantity` records, it emits one canonical JSON object with ordered
+`items` and `total_quantity`. An invalid element rejects the entire batch with
+`invalid batch record at index N` on stderr (one-based index), exit code 1,
+and no partial stdout. The separately observed controls are
+`acceptance.test_positive_record` and `acceptance.test_batch_records`.
+They fail on the current implementation. The existing delivery smoke check
+continues to pass, allowing genuine partial progress to be observed without
+altering a failing control.
