@@ -6,6 +6,13 @@ import json
 import sys
 
 
+def _positive_int(value: str) -> int:
+    number = int(value)
+    if number <= 0:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return number
+
+
 def _parse_record(record: str) -> dict[str, str | int]:
     name, quantity_text = record.split(":")
     if not name or not quantity_text:
@@ -21,6 +28,7 @@ def _parse_record(record: str) -> dict[str, str | int]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Read name and quantity records")
     parser.add_argument("--batch", action="store_true")
+    parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
     args = parser.parse_args()
 
@@ -28,7 +36,9 @@ def main() -> int:
         items = []
         for index, record in enumerate(args.record.split(","), start=1):
             try:
-                items.append(_parse_record(record))
+                item = _parse_record(record)
+                item["quantity"] *= args.scale
+                items.append(item)
             except ValueError:
                 print(f"invalid batch record at index {index}", file=sys.stderr)
                 return 1
@@ -46,6 +56,7 @@ def main() -> int:
         print("invalid record", file=sys.stderr)
         return 1
 
+    result["quantity"] *= args.scale
     print(json.dumps(result, separators=(",", ":")))
     return 0
 
