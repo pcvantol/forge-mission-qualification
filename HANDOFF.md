@@ -7,12 +7,13 @@
 - The default scale is one, preserving unscaled canonical JSON behavior.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains the implementation merge.
+- The protected `main` branch contains the implementation and Finalization
+  merges through PRs #9 and #10.
 
 ## Validation
 
 - `acceptance.test_scaled_quantity` covers positive single and batch scaling
-  plus non-positive scale rejection.
+  plus zero-scale rejection.
 - Existing record, positive-quantity, batch, and smoke controls remain the
   regression surface.
 - Independent Quality and Security assurance passed for the delivered
@@ -21,7 +22,7 @@
 
 ## Governance boundary
 
-Run `inbox-3ce6c0480ba64f208b05571acffba732` is in Finalization. This repository
-record does not grant merge, release, deployment, publication, or architecture
-authority. Engineering Platform Prompt History is immutable and remains the
-source for the run's execution conversation.
+Run `inbox-3ce6c0480ba64f208b05571acffba732` completed Finalization through PR
+#10. This repository record does not grant merge, release, deployment,
+publication, or architecture authority. Engineering Platform Prompt History is
+immutable and remains the source for the run's execution conversation.

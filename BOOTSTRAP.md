@@ -19,7 +19,7 @@ modes by implementation PR #9. Omitting `--scale` preserves canonical unscaled
 output, while malformed records, non-positive quantities, and non-positive
 scales remain rejected.
 
-The implementation is present on protected `main`. Governance handoff for run
-`inbox-3ce6c0480ba64f208b05571acffba732` is pending its Finalization PR. Prompt
-History remains an immutable Engineering Platform record and is not copied into
-this repository.
+The implementation and governance handoff for run
+`inbox-3ce6c0480ba64f208b05571acffba732` are present on protected `main` through
+Finalization PR #10. Prompt History remains an immutable Engineering Platform
+record and is not copied into this repository.
