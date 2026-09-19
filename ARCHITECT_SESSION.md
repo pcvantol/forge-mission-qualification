@@ -20,7 +20,7 @@ input size is not explicitly bounded. The implementation delta is limited to
 
 The implementation is merged on protected `main` through implementation PR
 #25. Governance-only Finalization for run
-`inbox-8b0ce51bb41e42179e886da4bd33ceb9` is pending through this Finalization PR.
+`inbox-8b0ce51bb41e42179e886da4bd33ceb9` is pending through Finalization PR #26.
 This reconciliation updates only the canonical rolling records. Prompt History
 remains immutable in the Engineering Platform and is not reproduced or revised
 here.

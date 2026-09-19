@@ -9,7 +9,7 @@
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
 - The protected `main` branch contains implementation PR #25; governance-only
-  Finalization is pending through this Finalization PR.
+  Finalization is pending through PR #26.
 
 ## Validation
 
@@ -31,8 +31,8 @@
 ## Governance boundary
 
 Run `inbox-8b0ce51bb41e42179e886da4bd33ceb9` is completing governance-only
-Finalization through this Finalization PR. This reconciliation aligns the
-canonical rolling records with implementation PR #25; it does not grant merge,
-release, deployment, publication, or architecture authority.
+Finalization through PR #26. This reconciliation aligns the canonical rolling
+records with implementation PR #25 and Finalization PR #26; it does not grant
+merge, release, deployment, publication, or architecture authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.

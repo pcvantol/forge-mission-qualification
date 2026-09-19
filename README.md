@@ -47,7 +47,6 @@ installed single-record and batch modes. Omitting it preserves established
 output, including scaling and grouping behavior. It does not add selection.
 Implementation PR #25 is merged on protected `main`; governance-only
 Finalization for run `inbox-8b0ce51bb41e42179e886da4bd33ceb9` is pending
-through this Finalization PR. Exceptionally large integer input remains a known
+through Finalization PR #26. Exceptionally large integer input remains a known
 non-blocking availability observation because input size is not explicitly
-bounded. The run's Prompt History remains immutable in the Engineering
-Platform.
+bounded. The run's Prompt History remains immutable in the Engineering Platform.

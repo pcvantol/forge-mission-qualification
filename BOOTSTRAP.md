@@ -26,7 +26,7 @@ Optional `--prefix` handling is present on protected `main` through
 implementation PR #25. It applies to installed single-record and batch name
 output while preserving existing behavior when omitted; it does not add
 selection behavior. Governance-only Finalization for run
-`inbox-8b0ce51bb41e42179e886da4bd33ceb9` is pending through this Finalization PR.
+`inbox-8b0ce51bb41e42179e886da4bd33ceb9` is pending through Finalization PR #26.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this
