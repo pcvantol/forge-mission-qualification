@@ -7,7 +7,8 @@
 - The default scale is one, preserving unscaled canonical JSON behavior.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains the implementation merge.
+- The protected `main` branch contains implementation PR #13 and the
+  governance handoff from Finalization PR #14.
 
 ## Validation
 
@@ -21,7 +22,8 @@
 
 ## Governance boundary
 
-Run `inbox-86fff22fa7e7488d9db1ba9e0a4edb95` is in Finalization. This repository
-record does not grant merge, release, deployment, publication, or architecture
-authority. Engineering Platform Prompt History is immutable and remains the
-source for the run's execution conversation.
+Run `inbox-86fff22fa7e7488d9db1ba9e0a4edb95` is finalized. This reconciliation
+only aligns the canonical rolling records and does not grant merge, release,
+deployment, publication, or architecture authority. Engineering Platform
+Prompt History is immutable and remains the source for the run's execution
+conversation.
