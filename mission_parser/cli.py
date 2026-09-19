@@ -28,9 +28,13 @@ def _parse_record(record: str) -> dict[str, str | int]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Read name and quantity records")
     parser.add_argument("--batch", action="store_true")
+    parser.add_argument("--group", action="store_true")
     parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
     args = parser.parse_args()
+
+    if args.group and not args.batch:
+        parser.error("--group requires --batch")
 
     if args.batch:
         items = []
@@ -42,6 +46,16 @@ def main() -> int:
             except ValueError:
                 print(f"invalid batch record at index {index}", file=sys.stderr)
                 return 1
+
+        if args.group:
+            grouped_items = {}
+            for item in items:
+                name = item["name"]
+                grouped_items[name] = grouped_items.get(name, 0) + item["quantity"]
+            items = [
+                {"name": name, "quantity": quantity}
+                for name, quantity in grouped_items.items()
+            ]
 
         result = {
             "items": items,
