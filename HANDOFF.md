@@ -7,8 +7,8 @@
 - The default scale is one, preserving unscaled canonical JSON behavior.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #18; its
-  governance-only Finalization is pending in draft Finalization PR #19.
+- The protected `main` branch contains implementation PR #18 and its
+  governance-only Finalization through merged Finalization PR #19.
 
 ## Validation
 
@@ -22,8 +22,9 @@
 
 ## Governance boundary
 
-Run `inbox-5fa3148502e64093aca6b00c52651211` is pending governance-only
-Finalization. This update aligns the canonical rolling records and does not
-grant merge, release, deployment, publication, or architecture authority.
-Engineering Platform Prompt History is immutable and remains the source for
-the run's execution conversation.
+Run `inbox-5fa3148502e64093aca6b00c52651211` completed governance-only
+Finalization through PR #19. This reconciliation aligns the canonical rolling
+records with that delivered state and does not grant merge, release,
+deployment, publication, or architecture authority. Engineering Platform
+Prompt History is immutable and remains the source for the run's execution
+conversation.

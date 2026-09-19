@@ -36,6 +36,7 @@ scale is rejected without emitting a result. The independent control is
 `acceptance.test_scaled_quantity`.
 
 Implementation PR #18 is merged on protected `main`. The governance-only
-Finalization for run `inbox-5fa3148502e64093aca6b00c52651211` is pending in
-draft Finalization PR #19. Its Prompt History remains immutable in the
-Engineering Platform.
+Finalization for run `inbox-5fa3148502e64093aca6b00c52651211` is merged through
+Finalization PR #19, and the canonical rolling records are reconciled to that
+delivered state. Its Prompt History remains immutable in the Engineering
+Platform.

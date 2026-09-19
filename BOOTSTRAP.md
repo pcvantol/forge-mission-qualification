@@ -20,7 +20,8 @@ output, while malformed records, non-positive quantities, and non-positive
 scales remain rejected.
 
 The implementation is present on protected `main` through implementation PR
-#18. The governance-only Finalization for run
-`inbox-5fa3148502e64093aca6b00c52651211` is pending in draft Finalization PR
-#19. Prompt History remains an immutable Engineering Platform record and is not
-copied into this repository.
+#18, and the governance-only Finalization for run
+`inbox-5fa3148502e64093aca6b00c52651211` is merged through Finalization PR #19.
+The canonical rolling records are reconciled to that delivered state. Prompt
+History remains an immutable Engineering Platform record and is not copied into
+this repository.
