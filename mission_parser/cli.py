@@ -30,6 +30,7 @@ def main() -> int:
     parser.add_argument("--batch", action="store_true")
     parser.add_argument("--group", action="store_true")
     parser.add_argument("--select")
+    parser.add_argument("--limit", type=_positive_int)
     parser.add_argument("--prefix", default="")
     parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
@@ -39,6 +40,8 @@ def main() -> int:
         parser.error("--group requires --batch")
     if args.select is not None and not args.batch:
         parser.error("--select requires --batch")
+    if args.limit is not None and not args.batch:
+        parser.error("--limit requires --batch")
 
     if args.batch:
         items = []
@@ -54,6 +57,9 @@ def main() -> int:
 
         if args.select is not None:
             items = [item for item in items if item["name"] == args.select]
+
+        if args.limit is not None:
+            items = items[:args.limit]
 
         if args.group:
             grouped_items = {}
