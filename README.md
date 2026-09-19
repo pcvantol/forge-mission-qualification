@@ -35,7 +35,7 @@ quantities. Omitting the option retains the prior output, and a non-positive
 scale is rejected without emitting a result. The independent control is
 `acceptance.test_scaled_quantity`.
 
-Implementation PR #13 and Finalization PR #14 are merged on protected `main`.
-Run `inbox-86fff22fa7e7488d9db1ba9e0a4edb95` is finalized, and this reconciliation
-aligns the canonical rolling records with that delivered state. Its Prompt
-History remains immutable in the Engineering Platform.
+Implementation PR #18 is merged on protected `main`. The governance-only
+Finalization for run `inbox-5fa3148502e64093aca6b00c52651211` is pending in
+its dedicated draft pull request. Its Prompt History remains immutable in the
+Engineering Platform.
