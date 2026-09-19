@@ -6,21 +6,47 @@ import json
 import sys
 
 
+def _parse_record(record: str) -> dict[str, str | int]:
+    name, quantity_text = record.split(":")
+    if not name or not quantity_text:
+        raise ValueError
+
+    quantity = int(quantity_text)
+    if quantity <= 0:
+        raise ValueError
+
+    return {"name": name, "quantity": quantity}
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Read one name and quantity record")
+    parser = argparse.ArgumentParser(description="Read name and quantity records")
+    parser.add_argument("--batch", action="store_true")
     parser.add_argument("record")
     args = parser.parse_args()
 
+    if args.batch:
+        items = []
+        for index, record in enumerate(args.record.split(","), start=1):
+            try:
+                items.append(_parse_record(record))
+            except ValueError:
+                print(f"invalid batch record at index {index}", file=sys.stderr)
+                return 1
+
+        result = {
+            "items": items,
+            "total_quantity": sum(item["quantity"] for item in items),
+        }
+        print(json.dumps(result, separators=(",", ":")))
+        return 0
+
     try:
-        name, quantity_text = args.record.split(":")
-        if not name or not quantity_text:
-            raise ValueError
-        quantity = int(quantity_text)
+        result = _parse_record(args.record)
     except ValueError:
         print("invalid record", file=sys.stderr)
         return 1
 
-    print(json.dumps({"name": name, "quantity": quantity}, separators=(",", ":")))
+    print(json.dumps(result, separators=(",", ":")))
     return 0
 
 
