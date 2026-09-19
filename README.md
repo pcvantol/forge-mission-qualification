@@ -55,7 +55,7 @@ control is `acceptance.limited_selected_batch_contract`.
 
 Implementation PR #31 is merged on protected `main` for run
 `inbox-3fdf7edc094242d99dd613b41d52b33e`; its governance-only Finalization is
-pending on the bounded Finalization branch. Exceptionally large integer input
+open through Finalization PR #32. Exceptionally large integer input
 remains a known non-blocking availability observation because input size is not
 explicitly bounded. The run's Prompt History remains immutable in the
 Engineering Platform.
