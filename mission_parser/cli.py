@@ -29,6 +29,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Read name and quantity records")
     parser.add_argument("--batch", action="store_true")
     parser.add_argument("--group", action="store_true")
+    parser.add_argument("--prefix", default="")
     parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
     args = parser.parse_args()
@@ -42,6 +43,7 @@ def main() -> int:
             try:
                 item = _parse_record(record)
                 item["quantity"] *= args.scale
+                item["name"] = args.prefix + item["name"]
                 items.append(item)
             except ValueError:
                 print(f"invalid batch record at index {index}", file=sys.stderr)
@@ -71,6 +73,7 @@ def main() -> int:
         return 1
 
     result["quantity"] *= args.scale
+    result["name"] = args.prefix + result["name"]
     print(json.dumps(result, separators=(",", ":")))
     return 0
 
