@@ -11,3 +11,7 @@ valid-record behavior. Run them with `python -m unittest discover -s acceptance`
 Changes to this repository are delivered through protected pull requests with
 the required smoke check. Operational credentials, receipts, local paths, and
 Mission runtime state do not belong in this repository.
+
+The parser implementation was delivered through implementation pull request #3.
+Governance Finalization records are maintained under `docs/engineering/` and do
+not change the parser's runtime behavior.
