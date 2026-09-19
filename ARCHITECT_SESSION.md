@@ -17,7 +17,9 @@ a separately authorized objective.
 
 ## Handoff
 
-The implementation is merged on protected `main`. Run
-`inbox-86fff22fa7e7488d9db1ba9e0a4edb95` now requires only its protected,
-governance-only Finalization handoff. Prompt History remains immutable in the
-Engineering Platform and is not reproduced or revised here.
+The implementation and its governance handoff are merged on protected `main`
+through implementation PR #13 and Finalization PR #14. Run
+`inbox-86fff22fa7e7488d9db1ba9e0a4edb95` is finalized; this reconciliation only
+aligns the canonical rolling records with that delivered state. Prompt History
+remains immutable in the Engineering Platform and is not reproduced or revised
+here.
