@@ -8,7 +8,7 @@
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
 - The protected `main` branch contains implementation PR #18; its
-  governance-only Finalization is pending in a dedicated draft pull request.
+  governance-only Finalization is pending in draft Finalization PR #19.
 
 ## Validation
 

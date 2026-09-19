@@ -37,5 +37,5 @@ scale is rejected without emitting a result. The independent control is
 
 Implementation PR #18 is merged on protected `main`. The governance-only
 Finalization for run `inbox-5fa3148502e64093aca6b00c52651211` is pending in
-its dedicated draft pull request. Its Prompt History remains immutable in the
+draft Finalization PR #19. Its Prompt History remains immutable in the
 Engineering Platform.
