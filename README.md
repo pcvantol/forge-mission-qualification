@@ -38,9 +38,12 @@ scale is rejected without emitting a result. The independent control is
 In batch mode, `--group` combines repeated names after scaling while preserving
 first-seen order. Omitting `--group` preserves ordered, ungrouped output, and
 single-record mode remains unchanged. The independent control is
-`acceptance.grouped_batch_contract`.
+`acceptance.grouped_batch_contract`. Because that module does not use the
+default `test*.py` discovery name, run the complete acceptance surface with
+`python3 -m unittest discover -s acceptance -t . -p '*.py'`.
 
-Implementation PR #21 is merged on protected `main`. Governance-only
-Finalization for run `inbox-1dcad7fc8bc642309bb040b0d6e56416` is pending through
-its dedicated draft Finalization PR. The run's Prompt History remains immutable
-in the Engineering Platform.
+Implementation PR #21 and governance-only Finalization PR #22 are merged on
+protected `main` for run `inbox-1dcad7fc8bc642309bb040b0d6e56416`.
+Exceptionally large integer input remains a known non-blocking availability
+observation because input size is not explicitly bounded. The run's Prompt
+History remains immutable in the Engineering Platform.

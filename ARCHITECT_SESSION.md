@@ -11,13 +11,16 @@ without `--batch` is rejected.
 
 The delivered candidate passed the dedicated grouping and scaling acceptance
 controls, the full acceptance suite, and the smoke suite. Independent Quality
-and Security reviews passed without findings. The implementation delta is
-limited to `mission_parser/cli.py`.
+and Security reviews completed without blocking findings. Exceptionally large
+integer input remains a known non-blocking availability observation because
+input size is not explicitly bounded. The implementation delta is limited to
+`mission_parser/cli.py`.
 
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
 #21. Governance-only Finalization for run
-`inbox-1dcad7fc8bc642309bb040b0d6e56416` is pending through its dedicated draft
-Finalization PR. Prompt History remains immutable in the Engineering Platform
-and is not reproduced or revised here.
+`inbox-1dcad7fc8bc642309bb040b0d6e56416` is merged through Finalization PR #22.
+This reconciliation updates only the canonical rolling records. Prompt History
+remains immutable in the Engineering Platform and is not reproduced or revised
+here.

@@ -6,7 +6,9 @@ delivery baseline.
 
 The installed `mission-parser` entrypoint is defined in `mission_parser/cli.py`.
 The acceptance controls in `acceptance/` exercise its malformed-record and
-valid-record behavior. Run them with `python -m unittest discover -s acceptance`.
+valid-record behavior. Run the complete acceptance surface, including the
+nonstandard grouping module name, with
+`python3 -m unittest discover -s acceptance -t . -p '*.py'`.
 
 Changes to this repository are delivered through protected pull requests with
 the required smoke check. Operational credentials, receipts, local paths, and
@@ -21,7 +23,8 @@ Malformed records, non-positive quantities, and non-positive scales remain
 rejected.
 
 The grouping implementation is present on protected `main` through
-implementation PR #21. Governance-only Finalization for run
-`inbox-1dcad7fc8bc642309bb040b0d6e56416` is pending through its dedicated draft
-Finalization PR. Prompt History remains an immutable Engineering Platform record
-and is not copied into this repository.
+implementation PR #21, and its governance-only Finalization is merged through
+PR #22 for run `inbox-1dcad7fc8bc642309bb040b0d6e56416`. Exceptionally large
+integer input remains a known non-blocking availability observation because
+input size is not explicitly bounded. Prompt History remains an immutable
+Engineering Platform record and is not copied into this repository.
