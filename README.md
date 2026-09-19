@@ -42,8 +42,16 @@ single-record mode remains unchanged. The independent control is
 default `test*.py` discovery name, run the complete acceptance surface with
 `python3 -m unittest discover -s acceptance -t . -p '*.py'`.
 
-Implementation PR #21 and governance-only Finalization PR #22 are merged on
-protected `main` for run `inbox-1dcad7fc8bc642309bb040b0d6e56416`.
-Exceptionally large integer input remains a known non-blocking availability
-observation because input size is not explicitly bounded. The run's Prompt
-History remains immutable in the Engineering Platform.
+In batch mode, `--select` retains records whose transformed name exactly
+matches its value after optional prefixing. Matching records preserve input
+order; selection occurs before optional grouping and totals are recomputed from
+the selected records. `--select` is rejected outside batch mode, and no
+`--limit` option or limiting behavior is provided. The independent control is
+`acceptance.selected_batch_contract`.
+
+Implementation PR #28 is merged on protected `main` for run
+`inbox-6e5a40147c3e49b982377aa81e5ff664`; its governance-only Finalization is
+recorded by Finalization PR #29. Exceptionally large integer input
+remains a known non-blocking availability observation because input size is not
+explicitly bounded. The run's Prompt History remains immutable in the
+Engineering Platform.
