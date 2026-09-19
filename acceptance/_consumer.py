@@ -11,7 +11,7 @@ import venv
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run_installed(record: str) -> subprocess.CompletedProcess[str]:
+def run_installed(*arguments: str) -> subprocess.CompletedProcess[str]:
     with TemporaryDirectory() as directory:
         environment = Path(directory) / "venv"
         venv.EnvBuilder(with_pip=True).create(environment)
@@ -19,4 +19,4 @@ def run_installed(record: str) -> subprocess.CompletedProcess[str]:
         entrypoint = environment / "bin" / "mission-parser"
         subprocess.run([str(python), "-m", "pip", "install", "--no-deps", "--no-build-isolation",
                         str(ROOT)], check=True, capture_output=True, text=True)
-        return subprocess.run([str(entrypoint), record], capture_output=True, text=True)
+        return subprocess.run([str(entrypoint), *arguments], capture_output=True, text=True)
