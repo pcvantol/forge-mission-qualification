@@ -3,7 +3,7 @@
 ## Current state
 
 - Positive quantity scaling for installed single-record and batch modes is
-  merged through implementation PR #9.
+  merged through implementation PR #13.
 - The default scale is one, preserving unscaled canonical JSON behavior.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
@@ -21,7 +21,7 @@
 
 ## Governance boundary
 
-Run `inbox-3ce6c0480ba64f208b05571acffba732` is in Finalization. This repository
+Run `inbox-86fff22fa7e7488d9db1ba9e0a4edb95` is in Finalization. This repository
 record does not grant merge, release, deployment, publication, or architecture
 authority. Engineering Platform Prompt History is immutable and remains the
 source for the run's execution conversation.
