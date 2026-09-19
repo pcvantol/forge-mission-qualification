@@ -1,0 +1,13 @@
+[build-system]
+requires = []
+build-backend = "qualification_build"
+backend-path = ["."]
+
+[project]
+name = "forge-mission-qualification-parser"
+version = "0.1.0"
+description = "Isolated parser target for Forge Mission qualification"
+requires-python = ">=3.11"
+
+[project.scripts]
+mission-parser = "mission_parser.cli:main"
