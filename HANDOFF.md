@@ -8,8 +8,8 @@
   ungrouped batch mode, and the default scale of one preserve established output.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #21. Its governance-only
-  Finalization is pending through the dedicated draft Finalization PR.
+- The protected `main` branch contains implementation PR #21 and its
+  governance-only Finalization through PR #22.
 
 ## Validation
 
@@ -19,13 +19,18 @@
   plus non-positive scale rejection.
 - Existing record, positive-quantity, batch, and smoke controls remain the
   regression surface.
-- Independent Quality and Security assurance passed for the delivered grouping
-  candidate without findings.
+- Run the complete acceptance surface with
+  `python3 -m unittest discover -s acceptance -t . -p '*.py'`; the explicit pattern
+  includes `acceptance.grouped_batch_contract`.
+- Independent Quality and Security assurance completed without blocking
+  findings. Exceptionally large integer input remains a known non-blocking
+  availability observation because input size is not explicitly bounded.
 
 ## Governance boundary
 
-Run `inbox-1dcad7fc8bc642309bb040b0d6e56416` is in governance-only Finalization.
-This reconciliation aligns the canonical rolling records with implementation
-PR #21 and does not grant merge, release, deployment, publication, or
-architecture authority. Engineering Platform Prompt History is immutable and
-remains the source for the run's execution conversation.
+Run `inbox-1dcad7fc8bc642309bb040b0d6e56416` completed governance-only
+Finalization through PR #22. This reconciliation aligns the canonical rolling
+records with implementation PR #21 and Finalization PR #22; it does not grant
+merge, release, deployment, publication, or architecture authority.
+Engineering Platform Prompt History is immutable and remains the source for the
+run's execution conversation.
