@@ -1,10 +1,10 @@
 {
-  "finalization_pr": 14,
-  "implementation_pr": 13,
-  "latest_run_id": "inbox-86fff22fa7e7488d9db1ba9e0a4edb95",
-  "platform_version": "2.3.86",
-  "prepared_at": "2026-09-19T17:00:08.482232+00:00",
-  "report_path": "docs/engineering/runs/2026/2026-09-19-inbox-86fff22fa7e7488d9db1ba9e0a4edb95.md",
+  "finalization_pr": 19,
+  "implementation_pr": 18,
+  "latest_run_id": "inbox-5fa3148502e64093aca6b00c52651211",
+  "platform_version": "2.3.87",
+  "prepared_at": "2026-09-19T17:47:49.087053+00:00",
+  "report_path": "docs/engineering/runs/2026/2026-09-19-inbox-5fa3148502e64093aca6b00c52651211.md",
   "repository_state": "FINALIZATION_PR_OPEN",
   "schema_version": 1,
   "workspace_state": "FINALIZATION_PENDING"
