@@ -15,13 +15,13 @@ Mission runtime state do not belong in this repository.
 ## Current engineering state
 
 Positive quantity scaling is implemented for installed single-record and batch
-modes by implementation PR #18. Omitting `--scale` preserves canonical unscaled
-output, while malformed records, non-positive quantities, and non-positive
-scales remain rejected.
+modes. Installed batch mode can additionally group repeated names in first-seen
+order after scaling, while single-mode and ungrouped behavior remain unchanged.
+Malformed records, non-positive quantities, and non-positive scales remain
+rejected.
 
-The implementation is present on protected `main` through implementation PR
-#18, and the governance-only Finalization for run
-`inbox-5fa3148502e64093aca6b00c52651211` is merged through Finalization PR #19.
-The canonical rolling records are reconciled to that delivered state. Prompt
-History remains an immutable Engineering Platform record and is not copied into
-this repository.
+The grouping implementation is present on protected `main` through
+implementation PR #21. Governance-only Finalization for run
+`inbox-1dcad7fc8bc642309bb040b0d6e56416` is pending through its dedicated draft
+Finalization PR. Prompt History remains an immutable Engineering Platform record
+and is not copied into this repository.

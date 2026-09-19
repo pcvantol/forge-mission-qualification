@@ -35,8 +35,12 @@ quantities. Omitting the option retains the prior output, and a non-positive
 scale is rejected without emitting a result. The independent control is
 `acceptance.test_scaled_quantity`.
 
-Implementation PR #18 is merged on protected `main`. The governance-only
-Finalization for run `inbox-5fa3148502e64093aca6b00c52651211` is merged through
-Finalization PR #19, and the canonical rolling records are reconciled to that
-delivered state. Its Prompt History remains immutable in the Engineering
-Platform.
+In batch mode, `--group` combines repeated names after scaling while preserving
+first-seen order. Omitting `--group` preserves ordered, ungrouped output, and
+single-record mode remains unchanged. The independent control is
+`acceptance.grouped_batch_contract`.
+
+Implementation PR #21 is merged on protected `main`. Governance-only
+Finalization for run `inbox-1dcad7fc8bc642309bb040b0d6e56416` is pending through
+its dedicated draft Finalization PR. The run's Prompt History remains immutable
+in the Engineering Platform.
