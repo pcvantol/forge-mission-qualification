@@ -18,9 +18,21 @@ def _parse_record(record: str) -> dict[str, str | int]:
     return {"name": name, "quantity": quantity}
 
 
+def _positive_int(value: str) -> int:
+    parsed = int(value)
+    if parsed <= 0:
+        raise argparse.ArgumentTypeError("must be positive")
+    return parsed
+
+
+def _scale_record(record: dict[str, str | int], scale: int) -> dict[str, str | int]:
+    return {"name": record["name"], "quantity": record["quantity"] * scale}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Read name and quantity records")
     parser.add_argument("--batch", action="store_true")
+    parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
     args = parser.parse_args()
 
@@ -28,7 +40,7 @@ def main() -> int:
         items = []
         for index, record in enumerate(args.record.split(","), start=1):
             try:
-                items.append(_parse_record(record))
+                items.append(_scale_record(_parse_record(record), args.scale))
             except ValueError:
                 print(f"invalid batch record at index {index}", file=sys.stderr)
                 return 1
@@ -41,7 +53,7 @@ def main() -> int:
         return 0
 
     try:
-        result = _parse_record(args.record)
+        result = _scale_record(_parse_record(args.record), args.scale)
     except ValueError:
         print("invalid record", file=sys.stderr)
         return 1
