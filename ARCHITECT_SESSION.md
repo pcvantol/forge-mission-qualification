@@ -2,24 +2,22 @@
 
 ## Delivered increment
 
-Implementation PR #18 added positive `--scale` handling to the installed parser
-for both single records and batches. Each batch item is scaled before the total
-is calculated. The default scale of one preserves established output, and
-non-positive scales are rejected.
+Implementation PR #21 added optional `--group` handling to installed batch mode.
+Repeated names are summed after quantity scaling and remain in first-seen order.
+Single-record and ungrouped batch behavior remain unchanged, and `--group`
+without `--batch` is rejected.
 
 ## Evidence posture
 
-The delivered candidate passed the dedicated scaling acceptance control, the
-existing behavioral controls, and the smoke suite. Independent Quality and
-Security reviews passed. Security recorded one non-blocking availability
-observation for exceptionally large integer input; addressing it would require
-a separately authorized objective.
+The delivered candidate passed the dedicated grouping and scaling acceptance
+controls, the full acceptance suite, and the smoke suite. Independent Quality
+and Security reviews passed without findings. The implementation delta is
+limited to `mission_parser/cli.py`.
 
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
-#18, and the governance-only Finalization for run
-`inbox-5fa3148502e64093aca6b00c52651211` is merged through Finalization PR #19.
-The canonical rolling records are reconciled to that delivered state. Prompt
-History remains immutable in the Engineering Platform and is not reproduced or
-revised here.
+#21. Governance-only Finalization for run
+`inbox-1dcad7fc8bc642309bb040b0d6e56416` is pending through its dedicated draft
+Finalization PR. Prompt History remains immutable in the Engineering Platform
+and is not reproduced or revised here.
