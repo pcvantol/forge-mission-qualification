@@ -21,7 +21,7 @@ explicitly bounded. The implementation delta is limited to
 
 The implementation is merged on protected `main` through implementation PR
 #28. Governance-only Finalization for run
-`inbox-6e5a40147c3e49b982377aa81e5ff664` is recorded by Finalization PR #29.
+`inbox-6e5a40147c3e49b982377aa81e5ff664` is merged through Finalization PR #29.
 This reconciliation updates only the canonical rolling records and
 repository handoff records. Prompt History remains immutable in the Engineering
 Platform and is not reproduced or revised here.

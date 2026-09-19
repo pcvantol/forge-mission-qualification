@@ -51,7 +51,7 @@ the selected records. `--select` is rejected outside batch mode, and no
 
 Implementation PR #28 is merged on protected `main` for run
 `inbox-6e5a40147c3e49b982377aa81e5ff664`; its governance-only Finalization is
-recorded by Finalization PR #29. Exceptionally large integer input
+merged through Finalization PR #29. Exceptionally large integer input
 remains a known non-blocking availability observation because input size is not
 explicitly bounded. The run's Prompt History remains immutable in the
 Engineering Platform.

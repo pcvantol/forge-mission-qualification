@@ -26,7 +26,7 @@ Batch selection on transformed names after optional prefixing is present on
 protected `main` through implementation PR #28. Selection preserves matching
 record order, composes with scaling and grouping, and is available only in
 batch mode; no limiting behavior was introduced. Its governance-only
-Finalization is recorded by Finalization PR #29 for run
+Finalization is merged through Finalization PR #29 for run
 `inbox-6e5a40147c3e49b982377aa81e5ff664`. Exceptionally large integer input
 remains a known non-blocking availability observation because input size is not
 explicitly bounded. Prompt History remains an immutable Engineering Platform
