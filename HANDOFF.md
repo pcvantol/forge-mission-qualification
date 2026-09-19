@@ -10,8 +10,8 @@
   option is rejected outside batch mode.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #31; its
-  governance-only Finalization is open through Finalization PR #32.
+- The protected `main` branch contains implementation PR #31 and its
+  governance-only Finalization through Finalization PR #32.
 
 ## Validation
 
@@ -31,10 +31,11 @@
 
 ## Governance boundary
 
-Run `inbox-3fdf7edc094242d99dd613b41d52b33e` has governance-only Finalization
-open through Finalization PR #32. This reconciliation aligns the
-canonical rolling and repository handoff records with implementation PR #31;
-it does not grant merge, release, deployment, publication, or architecture
-authority.
+Run `inbox-3fdf7edc094242d99dd613b41d52b33e` delivered the positive batch
+`--limit` objective through implementation PR #31 and completed
+governance-only Finalization through Finalization PR #32. This reconciliation
+aligns the canonical rolling and repository handoff records with both merged
+deliveries; it does not grant merge, release, deployment, publication, or
+architecture authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.

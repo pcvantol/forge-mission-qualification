@@ -54,8 +54,8 @@ existing output, and the option is rejected outside batch mode. The independent
 control is `acceptance.limited_selected_batch_contract`.
 
 Implementation PR #31 is merged on protected `main` for run
-`inbox-3fdf7edc094242d99dd613b41d52b33e`; its governance-only Finalization is
-open through Finalization PR #32. Exceptionally large integer input
-remains a known non-blocking availability observation because input size is not
-explicitly bounded. The run's Prompt History remains immutable in the
-Engineering Platform.
+`inbox-3fdf7edc094242d99dd613b41d52b33e`; governance-only Finalization for the
+positive batch `--limit` objective is also merged through Finalization PR #32.
+Exceptionally large integer input remains a known non-blocking availability
+observation because input size is not explicitly bounded. The run's Prompt
+History remains immutable in the Engineering Platform.

@@ -19,8 +19,8 @@ input size is not explicitly bounded. The implementation delta is limited to
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
-#31. Governance-only Finalization for run
-`inbox-3fdf7edc094242d99dd613b41d52b33e` is open through Finalization PR #32.
-This reconciliation updates only the canonical rolling records and
-repository handoff records. Prompt History remains immutable in the Engineering
-Platform and is not reproduced or revised here.
+#31. Governance-only Finalization for the positive batch `--limit` objective is
+merged through Finalization PR #32 for run
+`inbox-3fdf7edc094242d99dd613b41d52b33e`. The implementation and Finalization
+deliveries are therefore present on protected `main`. Prompt History remains
+immutable in the Engineering Platform and is not reproduced or revised here.
