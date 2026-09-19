@@ -2,22 +2,23 @@
 
 ## Current state
 
-- Optional selection of transformed record names in installed batch mode is
-  merged through implementation PR #28.
-- Prefixing and scaling occur before selection; optional grouping follows it.
-  Matching records preserve input order, and totals reflect selected records.
-- Single-mode and unselected batch behavior remain unchanged. `--select` is
-  batch-only, and no `--limit` option or limiting behavior was introduced.
+- A positive batch `--limit` is merged through implementation PR #31.
+- Prefixing and scaling occur before optional selection; limiting follows
+  selection and precedes optional grouping. Retained records preserve input
+  order, and totals reflect the limited records.
+- Existing behavior remains unchanged when `--limit` is omitted, and the
+  option is rejected outside batch mode.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #28 and its
-  governance-only Finalization through PR #29.
+- The protected `main` branch contains implementation PR #31; its
+  governance-only Finalization is open through Finalization PR #32.
 
 ## Validation
 
-- `acceptance.selected_batch_contract` covers transformed-name selection,
-  preserved order, composition with grouping and scaling, and the batch-only
-  option boundary.
+- `acceptance.limited_selected_batch_contract` covers positive limiting after
+  selection and before grouping, preserved order, scaling composition, and the
+  batch-only option boundary. `acceptance.selected_batch_contract` continues to
+  cover the underlying selection behavior.
 - Prefixing, grouping, scaling, record, positive-quantity, and batch controls
   remain the acceptance regression surface.
 - Run the complete acceptance surface with
@@ -30,9 +31,10 @@
 
 ## Governance boundary
 
-Run `inbox-6e5a40147c3e49b982377aa81e5ff664` completed governance-only Finalization
-through PR #29. This reconciliation aligns the canonical rolling and repository
-handoff records with implementation PR #28; it does not grant
-merge, release, deployment, publication, or architecture authority.
+Run `inbox-3fdf7edc094242d99dd613b41d52b33e` has governance-only Finalization
+open through Finalization PR #32. This reconciliation aligns the
+canonical rolling and repository handoff records with implementation PR #31;
+it does not grant merge, release, deployment, publication, or architecture
+authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.
