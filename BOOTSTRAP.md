@@ -27,8 +27,9 @@ Protected `main` includes batch reversal through implementation PR #45 for run
 after optional transformed-name selection, skipping, and limiting, and before
 optional grouping. It preserves all existing modes when omitted and is rejected
 outside batch mode. The implementation merge is
-`f64c1052e70ccef308646a6322a90d1d0c5a6ae4`; governance-only Finalization is
-open through draft Finalization PR #46.
+`f64c1052e70ccef308646a6322a90d1d0c5a6ae4`; governance-only Finalization PR
+#46 is merged, and the delivered repository state is bound to Finalization merge
+`4ef08bb54bb9219919d2aae18a53cb568c532b6b`.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this
