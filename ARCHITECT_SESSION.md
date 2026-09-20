@@ -2,25 +2,24 @@
 
 ## Delivered increment
 
-Implementation PR #31 added a positive `--limit` to installed batch mode.
-Limiting occurs after optional transformed-name selection and before optional
-grouping, preserving input order. Existing parser behavior remains unchanged
-when the option is omitted, and `--limit` without `--batch` is rejected.
+Implementation PR #34 extracted focused helpers for batch parsing and scaling,
+selection and limiting, and grouping. The refactor preserves the installed
+batch contracts, including selection before limiting, limiting before optional
+grouping, input order, and rejection of `--limit` without `--batch`.
 
 ## Evidence posture
 
-The delivered candidate passed the dedicated limited-selection and selection
-controls, the complete acceptance surface, and the smoke suite. Independent
-Quality and Security reviews completed without findings. Exceptionally large
-integer input remains a known non-blocking availability observation because
-input size is not explicitly bounded. The implementation delta is limited to
+The delivered candidate passed the dedicated limited-selection, selection, and
+batch-record controls and the complete acceptance surface. Independent Quality
+and Security reviews completed without findings. Exceptionally large integer
+input remains a known non-blocking availability observation because input size
+is not explicitly bounded. The implementation delta is limited to
 `mission_parser/cli.py`.
 
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
-#31. Governance-only Finalization for the positive batch `--limit` objective is
-merged through Finalization PR #32 for run
-`inbox-3fdf7edc094242d99dd613b41d52b33e`. The implementation and Finalization
-deliveries are therefore present on protected `main`. Prompt History remains
-immutable in the Engineering Platform and is not reproduced or revised here.
+#34. Governance-only Finalization for the focused batch-helper extraction is
+tracked in draft Finalization PR #35 for run
+`inbox-270aa1c1fb7a4a99ad89896e40cc5caa`. Prompt History remains immutable in the
+Engineering Platform and is not reproduced or revised here.

@@ -1,9 +1,9 @@
 # Latest Engineering Run
 
-- Run ID: `inbox-3fdf7edc094242d99dd613b41d52b33e`
-- Engineering Platform: `2.3.87`
-- Implementation PR: `#31`
-- Finalization PR: `#32`
+- Run ID: `inbox-270aa1c1fb7a4a99ad89896e40cc5caa`
+- Engineering Platform: `2.3.89`
+- Implementation PR: `#34`
+- Finalization PR: `#35`
 - Repository State: `FINALIZATION_PR_OPEN`
 - Workspace State: `FINALIZATION_PENDING`
-- Handoff: `docs/engineering/runs/2026/2026-09-19-inbox-3fdf7edc094242d99dd613b41d52b33e.md`
+- Handoff: `docs/engineering/runs/2026/2026-09-20-inbox-270aa1c1fb7a4a99ad89896e40cc5caa.md`
