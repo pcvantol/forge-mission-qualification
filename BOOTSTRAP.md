@@ -27,8 +27,9 @@ Protected `main` includes batch skipping through implementation PR #61 for run
 applies after optional transformed-name selection and before optional limiting
 and grouping. Zero preserves the selected records, negative values are rejected,
 and the option is rejected outside batch mode. The implementation merge is
-`ea594372bbc0973078836b39ade97e6440cd2f50`; governance-only Finalization is
-open as draft PR #62 on the run's bounded Finalization branch.
+`ea594372bbc0973078836b39ade97e6440cd2f50`; governance-only Finalization PR
+#62 is also merged on protected `main` at
+`56af81caeb394ce8728dc7dbda6ba8078ed0d4e6`.
 Any future `--reverse` objective must be derived again from accepted terminal
 delivery evidence and this reconciled repository truth.
 Exceptionally large integer input remains a known non-blocking availability
