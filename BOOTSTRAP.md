@@ -28,7 +28,7 @@ are present on protected `main` through implementation PR #34 for run
 batch contracts: a positive `--limit` applies after optional transformed-name
 selection and before optional grouping, input order is preserved, and existing
 behavior remains unchanged when the option is omitted. Governance-only
-Finalization for this objective is tracked in draft Finalization PR #35.
+Finalization for this objective was merged through Finalization PR #35.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this
