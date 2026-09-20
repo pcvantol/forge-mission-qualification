@@ -11,7 +11,7 @@
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
 - The protected `main` branch contains implementation PR #61; governance-only
-  Finalization is being prepared on the run's bounded Finalization branch.
+  Finalization is open as draft PR #62 on the run's bounded Finalization branch.
 
 ## Validation
 
@@ -33,7 +33,7 @@
 Run `inbox-8c39cd5b65e84824a05d5ed97cdadc76` delivered batch skipping through
 implementation PR #61. The implementation merge is
 `ea594372bbc0973078836b39ade97e6440cd2f50`. Governance-only Finalization is
-being prepared on the run's bounded Finalization branch. The implementation diff is
+open as draft PR #62 on the run's bounded Finalization branch. The implementation diff is
 confined to `mission_parser/cli.py`.
 This reconciliation aligns the canonical rolling and repository handoff records with
 the completed implementation delivery; it does not grant merge, release,
