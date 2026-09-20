@@ -57,7 +57,7 @@ Implementation PR #34 is merged on protected `main` for run
 `inbox-270aa1c1fb7a4a99ad89896e40cc5caa`. It extracts focused batch parsing and
 scaling, selection and limiting, and grouping helpers without changing the
 installed batch contracts. Governance-only Finalization for this objective is
-tracked in the run's draft Finalization pull request.
+tracked in draft Finalization PR #35.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. The run's Prompt
 History remains immutable in the Engineering Platform.

@@ -20,6 +20,6 @@ is not explicitly bounded. The implementation delta is limited to
 
 The implementation is merged on protected `main` through implementation PR
 #34. Governance-only Finalization for the focused batch-helper extraction is
-tracked in the draft Finalization pull request for run
+tracked in draft Finalization PR #35 for run
 `inbox-270aa1c1fb7a4a99ad89896e40cc5caa`. Prompt History remains immutable in the
 Engineering Platform and is not reproduced or revised here.
