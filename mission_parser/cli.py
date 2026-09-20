@@ -13,13 +13,6 @@ def _positive_int(value: str) -> int:
     return number
 
 
-def _non_negative_int(value: str) -> int:
-    number = int(value)
-    if number < 0:
-        raise argparse.ArgumentTypeError("must be a non-negative integer")
-    return number
-
-
 def _parse_record(record: str) -> dict[str, str | int]:
     name, quantity_text = record.split(":")
     if not name or not quantity_text:
@@ -49,16 +42,14 @@ def _parse_and_scale_batch(
     return items, None
 
 
-def _select_skip_and_limit_batch(
+def _select_and_limit_batch(
     items: list[dict[str, str | int]],
     *,
     selected_name: str | None,
-    skip: int,
     limit: int | None,
 ) -> list[dict[str, str | int]]:
     if selected_name is not None:
         items = [item for item in items if item["name"] == selected_name]
-    items = items[skip:]
     if limit is not None:
         items = items[:limit]
     return items
@@ -82,9 +73,7 @@ def main() -> int:
     parser.add_argument("--batch", action="store_true")
     parser.add_argument("--group", action="store_true")
     parser.add_argument("--select")
-    parser.add_argument("--skip", type=_non_negative_int)
     parser.add_argument("--limit", type=_positive_int)
-    parser.add_argument("--reverse", action="store_true")
     parser.add_argument("--prefix", default="")
     parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
@@ -94,12 +83,8 @@ def main() -> int:
         parser.error("--group requires --batch")
     if args.select is not None and not args.batch:
         parser.error("--select requires --batch")
-    if args.skip is not None and not args.batch:
-        parser.error("--skip requires --batch")
     if args.limit is not None and not args.batch:
         parser.error("--limit requires --batch")
-    if args.reverse and not args.batch:
-        parser.error("--reverse requires --batch")
 
     if args.batch:
         items, invalid_index = _parse_and_scale_batch(
@@ -109,15 +94,9 @@ def main() -> int:
             print(f"invalid batch record at index {invalid_index}", file=sys.stderr)
             return 1
 
-        items = _select_skip_and_limit_batch(
-            items,
-            selected_name=args.select,
-            skip=args.skip or 0,
-            limit=args.limit,
+        items = _select_and_limit_batch(
+            items, selected_name=args.select, limit=args.limit
         )
-
-        if args.reverse:
-            items.reverse()
 
         if args.group:
             items = _group_batch(items)
