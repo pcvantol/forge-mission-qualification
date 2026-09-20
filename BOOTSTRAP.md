@@ -22,13 +22,13 @@ order after scaling, while single-mode and ungrouped behavior remain unchanged.
 Malformed records, non-positive quantities, and non-positive scales remain
 rejected.
 
-Focused batch parsing and scaling, selection and limiting, and grouping helpers
-are present on protected `main` through implementation PR #34 for run
-`inbox-270aa1c1fb7a4a99ad89896e40cc5caa`. The extraction preserves the installed
-batch contracts: a positive `--limit` applies after optional transformed-name
-selection and before optional grouping, input order is preserved, and existing
-behavior remains unchanged when the option is omitted. Governance-only
-Finalization for this objective was merged through Finalization PR #35.
+Protected `main` includes non-negative batch skipping through implementation PR
+#38 for run `inbox-9bf64fe64700474782ccb1b2b4b2e484`. In batch mode, `--skip`
+applies after optional transformed-name selection and before optional limiting
+and grouping. Input order is preserved, zero leaves the selected records
+unchanged, negative values and non-batch use are rejected, and `--reverse` is
+not implemented. Governance-only Finalization is being prepared in the run's
+draft Finalization pull request.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this
