@@ -18,5 +18,5 @@ limited to `mission_parser/cli.py`.
 The implementation is merged on protected `main` through implementation PR #45
 for run `inbox-ff4da8ed94c0459aa68ca2107e3f3a34`. The implementation merge is
 `f64c1052e70ccef308646a6322a90d1d0c5a6ae4`; governance-only Finalization is
-being prepared on the mandated Finalization branch. Prompt History remains
+open through draft Finalization PR #46. Prompt History remains
 immutable in the Engineering Platform and is not reproduced or revised here.

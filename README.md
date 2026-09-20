@@ -67,7 +67,7 @@ mode. The independent control is `acceptance.reversed_batch_contract`.
 Implementation PR #45 is merged on protected `main` for run
 `inbox-ff4da8ed94c0459aa68ca2107e3f3a34`. The implementation merge is
 `f64c1052e70ccef308646a6322a90d1d0c5a6ae4`; governance-only Finalization is
-being prepared on the mandated Finalization branch. The implementation diff is
+open through draft Finalization PR #46. The implementation diff is
 confined to `mission_parser/cli.py`.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. The run's Prompt
