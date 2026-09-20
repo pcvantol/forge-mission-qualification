@@ -2,7 +2,7 @@
 
 ## Current state
 
-- Batch skipping is merged through implementation PR #54.
+- Batch skipping is merged through implementation PR #58.
 - Prefixing and scaling occur before optional selection; skipping follows
   selection, and limiting and optional grouping follow skipping. Totals reflect
   the retained records.
@@ -10,8 +10,8 @@
   selected records, negative values are rejected, and non-batch use is rejected.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #54; governance-only
-  Finalization is open as draft PR #55 on the run's bounded Finalization branch.
+- The protected `main` branch contains implementation PR #58; governance-only
+  Finalization is prepared on the run's bounded Finalization branch.
 
 ## Validation
 
@@ -23,18 +23,18 @@
   `python3 -m unittest discover -s acceptance -t . -p '*.py'`; the explicit pattern
   includes the nonstandard contract module names.
 - Independent Quality and Security assurance passed without findings. The
-  implementation diff is confined to `mission_parser/cli.py` and
-  `acceptance/skipped_batch_contract.py` and does not implement `--reverse`.
+  implementation diff is confined to `mission_parser/cli.py` and does not
+  implement `--reverse`.
   Exceptionally large integer input remains a known non-blocking
   availability observation because input size is not explicitly bounded.
 
 ## Governance boundary
 
-Run `inbox-61f1923b04e04f8aaa57b2c9893dae63` delivered batch skipping through
-implementation PR #54. The implementation merge is
-`23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`. Governance-only Finalization is
-open as draft PR #55 on the run's bounded Finalization branch. The implementation diff is
-confined to `mission_parser/cli.py` and `acceptance/skipped_batch_contract.py`.
+Run `inbox-044602b879d14e7b9719df78f6111bed` delivered batch skipping through
+implementation PR #58. The implementation merge is
+`3909094fed1e2edc23cfae30ab0f9cceccc7c1bf`. Governance-only Finalization is
+prepared on the run's bounded Finalization branch. The implementation diff is
+confined to `mission_parser/cli.py`.
 This reconciliation aligns the canonical rolling and repository handoff records with
 the completed implementation delivery; it does not grant merge, release,
 deployment, publication, or architecture authority. Any future `--reverse`

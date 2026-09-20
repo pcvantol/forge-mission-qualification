@@ -59,11 +59,11 @@ order, zero leaves the selected records unchanged, and negative values are
 rejected. `--skip` is rejected outside batch mode. The independent control is
 `acceptance.skipped_batch_contract`.
 
-Implementation PR #54 is merged on protected `main` for run
-`inbox-61f1923b04e04f8aaa57b2c9893dae63`. The implementation merge is
-`23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`; governance-only Finalization is
-open as draft PR #55 on the run's bounded Finalization branch. The implementation diff is
-confined to `mission_parser/cli.py` and `acceptance/skipped_batch_contract.py`
+Implementation PR #58 is merged on protected `main` for run
+`inbox-044602b879d14e7b9719df78f6111bed`. The implementation merge is
+`3909094fed1e2edc23cfae30ab0f9cceccc7c1bf`; governance-only Finalization is
+prepared on the run's bounded Finalization branch. The implementation diff is
+confined to `mission_parser/cli.py`
 and does not implement `--reverse`. Any future `--reverse` objective must be
 derived again from accepted terminal delivery evidence and this reconciled repository truth.
 Exceptionally large integer input remains a known non-blocking availability
