@@ -21,6 +21,8 @@ implementation delta is limited to `mission_parser/cli.py`.
 
 The implementation is merged on protected `main` through implementation PR #49
 for run `inbox-3633db6f729249ea85e6b9bdae9554a0`. The implementation merge is
-`1cac8e42d0049da4db6fbff1508e11063e70eab9`. Governance-only Finalization is in
-progress. Prompt History remains immutable in the Engineering Platform and is
-not reproduced or revised here.
+`1cac8e42d0049da4db6fbff1508e11063e70eab9`. Governance-only Finalization was
+merged through PR #50 at `4a832f69c4711596e25c6f90de2afd95378c831b`.
+Any future `--reverse` objective must be derived again from accepted terminal
+delivery evidence and this reconciled repository truth. Prompt History remains
+immutable in the Engineering Platform and is not reproduced or revised here.

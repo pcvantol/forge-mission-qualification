@@ -27,8 +27,10 @@ Protected `main` includes batch skipping through implementation PR #49 for run
 applies after optional transformed-name selection and before optional limiting
 and grouping. Zero preserves the selected records, negative values are rejected,
 and the option is rejected outside batch mode. The implementation merge is
-`1cac8e42d0049da4db6fbff1508e11063e70eab9`; governance-only Finalization is
-in progress.
+`1cac8e42d0049da4db6fbff1508e11063e70eab9`; governance-only Finalization was
+merged through PR #50 at `4a832f69c4711596e25c6f90de2afd95378c831b`.
+Any future `--reverse` objective must be derived again from accepted terminal
+delivery evidence and this reconciled repository truth.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this
