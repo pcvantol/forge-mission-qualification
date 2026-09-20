@@ -84,6 +84,7 @@ def main() -> int:
     parser.add_argument("--select")
     parser.add_argument("--skip", type=_non_negative_int)
     parser.add_argument("--limit", type=_positive_int)
+    parser.add_argument("--reverse", action="store_true")
     parser.add_argument("--prefix", default="")
     parser.add_argument("--scale", type=_positive_int, default=1)
     parser.add_argument("record")
@@ -97,6 +98,8 @@ def main() -> int:
         parser.error("--skip requires --batch")
     if args.limit is not None and not args.batch:
         parser.error("--limit requires --batch")
+    if args.reverse and not args.batch:
+        parser.error("--reverse requires --batch")
 
     if args.batch:
         items, invalid_index = _parse_and_scale_batch(
@@ -109,6 +112,8 @@ def main() -> int:
         items = _select_skip_and_limit_batch(
             items, selected_name=args.select, skip=args.skip or 0, limit=args.limit
         )
+        if args.reverse:
+            items.reverse()
 
         if args.group:
             items = _group_batch(items)
