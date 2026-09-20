@@ -25,6 +25,49 @@ def _parse_record(record: str) -> dict[str, str | int]:
     return {"name": name, "quantity": quantity}
 
 
+def _parse_and_scale_batch(
+    records: str, *, scale: int, prefix: str
+) -> tuple[list[dict[str, str | int]], int | None]:
+    items = []
+    for index, record in enumerate(records.split(","), start=1):
+        try:
+            item = _parse_record(record)
+        except ValueError:
+            return [], index
+
+        item["quantity"] *= scale
+        item["name"] = prefix + item["name"]
+        items.append(item)
+
+    return items, None
+
+
+def _select_and_limit_batch(
+    items: list[dict[str, str | int]],
+    *,
+    selected_name: str | None,
+    limit: int | None,
+) -> list[dict[str, str | int]]:
+    if selected_name is not None:
+        items = [item for item in items if item["name"] == selected_name]
+    if limit is not None:
+        items = items[:limit]
+    return items
+
+
+def _group_batch(
+    items: list[dict[str, str | int]],
+) -> list[dict[str, str | int]]:
+    grouped_items = {}
+    for item in items:
+        name = item["name"]
+        grouped_items[name] = grouped_items.get(name, 0) + item["quantity"]
+    return [
+        {"name": name, "quantity": quantity}
+        for name, quantity in grouped_items.items()
+    ]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Read name and quantity records")
     parser.add_argument("--batch", action="store_true")
@@ -44,32 +87,19 @@ def main() -> int:
         parser.error("--limit requires --batch")
 
     if args.batch:
-        items = []
-        for index, record in enumerate(args.record.split(","), start=1):
-            try:
-                item = _parse_record(record)
-                item["quantity"] *= args.scale
-                item["name"] = args.prefix + item["name"]
-                items.append(item)
-            except ValueError:
-                print(f"invalid batch record at index {index}", file=sys.stderr)
-                return 1
+        items, invalid_index = _parse_and_scale_batch(
+            args.record, scale=args.scale, prefix=args.prefix
+        )
+        if invalid_index is not None:
+            print(f"invalid batch record at index {invalid_index}", file=sys.stderr)
+            return 1
 
-        if args.select is not None:
-            items = [item for item in items if item["name"] == args.select]
-
-        if args.limit is not None:
-            items = items[:args.limit]
+        items = _select_and_limit_batch(
+            items, selected_name=args.select, limit=args.limit
+        )
 
         if args.group:
-            grouped_items = {}
-            for item in items:
-                name = item["name"]
-                grouped_items[name] = grouped_items.get(name, 0) + item["quantity"]
-            items = [
-                {"name": name, "quantity": quantity}
-                for name, quantity in grouped_items.items()
-            ]
+            items = _group_batch(items)
 
         result = {
             "items": items,
