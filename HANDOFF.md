@@ -2,24 +2,23 @@
 
 ## Current state
 
-- Non-negative batch skipping is merged through implementation PR #42.
+- Batch reversal is merged through implementation PR #45.
 - Prefixing and scaling occur before optional selection; skipping follows
-  selection and precedes optional limiting and grouping. Retained records
-  preserve input order, and totals reflect the retained records.
-- Existing behavior remains unchanged when `--skip` is omitted or zero, and
-  negative values and non-batch use are rejected. `--reverse` is not
-  implemented.
+  selection, limiting follows skipping, and reversal occurs before optional
+  grouping. Totals reflect the retained records.
+- Existing behavior remains unchanged when `--reverse` is omitted, and
+  non-batch use is rejected.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #42 and its
-  governance-only Finalization through Finalization PR #43.
+- The protected `main` branch contains implementation PR #45; governance-only
+  Finalization is open through draft Finalization PR #46.
 
 ## Validation
 
-- `acceptance.skipped_batch_contract` covers skipping after selection and
-  before limiting, preserved order, and the batch-only option boundary.
-- Focused edge checks cover zero as an unchanged offset and rejection of a
-  negative offset without output.
+- `acceptance.reversed_batch_contract` covers reversal after skipping and
+  limiting and the batch-only option boundary.
+- `acceptance.skipped_batch_contract` continues to cover skipping after
+  selection and before limiting.
 - Prefixing, grouping, scaling, record, positive-quantity, and batch controls
   remain the acceptance regression surface.
 - Run the complete acceptance surface with
@@ -32,14 +31,13 @@
 
 ## Governance boundary
 
-Run `inbox-52c2e7c0bd6a43e58d5a88bd2ba503d7` delivered non-negative batch skipping
-through implementation PR #42. Its governance-only Finalization is merged
-through Finalization PR #43. The implementation merge is
-`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, the Finalization merge is
-`4a3539c46816b0ae1efdb1c0609ad97147129f0e`, and the implementation diff is
-confined to `mission_parser/cli.py` with no `--reverse` implementation. This
-reconciliation aligns the canonical rolling and repository handoff records
-with the completed delivery; it does not grant merge, release, deployment,
+Run `inbox-ff4da8ed94c0459aa68ca2107e3f3a34` delivered batch reversal through
+implementation PR #45. The implementation merge is
+`f64c1052e70ccef308646a6322a90d1d0c5a6ae4`, and its governance-only
+Finalization is open through draft Finalization PR #46. The
+implementation diff is confined to `mission_parser/cli.py`. This reconciliation
+aligns the canonical rolling and repository handoff records with the completed
+implementation delivery; it does not grant merge, release, deployment,
 publication, or architecture authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.

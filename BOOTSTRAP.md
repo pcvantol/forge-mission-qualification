@@ -17,20 +17,18 @@ Mission runtime state do not belong in this repository.
 ## Current engineering state
 
 Positive quantity scaling is implemented for installed single-record and batch
-modes. Installed batch mode can additionally group repeated names in first-seen
-order after scaling, while single-mode and ungrouped behavior remain unchanged.
+modes. Installed batch mode can additionally select, skip, limit, reverse, and
+group records, while single-mode and unchanged-option behavior remain intact.
 Malformed records, non-positive quantities, and non-positive scales remain
 rejected.
 
-Protected `main` includes non-negative batch skipping through implementation PR
-#42 for run `inbox-52c2e7c0bd6a43e58d5a88bd2ba503d7`. In batch mode, `--skip`
-applies after optional transformed-name selection and before optional limiting
-and grouping. Input order is preserved, zero leaves the selected records
-unchanged, negative values and non-batch use are rejected, and `--reverse` is
-not implemented. Governance-only Finalization is merged through Finalization
-PR #43. The implementation merge is
-`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, and the Finalization merge is
-`4a3539c46816b0ae1efdb1c0609ad97147129f0e`.
+Protected `main` includes batch reversal through implementation PR #45 for run
+`inbox-ff4da8ed94c0459aa68ca2107e3f3a34`. In batch mode, `--reverse` applies
+after optional transformed-name selection, skipping, and limiting, and before
+optional grouping. It preserves all existing modes when omitted and is rejected
+outside batch mode. The implementation merge is
+`f64c1052e70ccef308646a6322a90d1d0c5a6ae4`; governance-only Finalization is
+open through draft Finalization PR #46.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this
