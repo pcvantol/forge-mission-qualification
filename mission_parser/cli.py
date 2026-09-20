@@ -13,13 +13,6 @@ def _positive_int(value: str) -> int:
     return number
 
 
-def _non_negative_int(value: str) -> int:
-    number = int(value)
-    if number < 0:
-        raise argparse.ArgumentTypeError("must be a non-negative integer")
-    return number
-
-
 def _parse_record(record: str) -> dict[str, str | int]:
     name, quantity_text = record.split(":")
     if not name or not quantity_text:
@@ -54,12 +47,9 @@ def _select_and_limit_batch(
     *,
     selected_name: str | None,
     limit: int | None,
-    skip: int | None = None,
 ) -> list[dict[str, str | int]]:
     if selected_name is not None:
         items = [item for item in items if item["name"] == selected_name]
-    if skip:
-        items = items[skip:]
     if limit is not None:
         items = items[:limit]
     return items
@@ -83,7 +73,6 @@ def main() -> int:
     parser.add_argument("--batch", action="store_true")
     parser.add_argument("--group", action="store_true")
     parser.add_argument("--select")
-    parser.add_argument("--skip", type=_non_negative_int)
     parser.add_argument("--limit", type=_positive_int)
     parser.add_argument("--prefix", default="")
     parser.add_argument("--scale", type=_positive_int, default=1)
@@ -94,8 +83,6 @@ def main() -> int:
         parser.error("--group requires --batch")
     if args.select is not None and not args.batch:
         parser.error("--select requires --batch")
-    if args.skip is not None and not args.batch:
-        parser.error("--skip requires --batch")
     if args.limit is not None and not args.batch:
         parser.error("--limit requires --batch")
 
@@ -108,7 +95,7 @@ def main() -> int:
             return 1
 
         items = _select_and_limit_batch(
-            items, selected_name=args.select, skip=args.skip, limit=args.limit
+            items, selected_name=args.select, limit=args.limit
         )
 
         if args.group:
