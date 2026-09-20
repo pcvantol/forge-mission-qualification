@@ -2,7 +2,7 @@
 
 ## Current state
 
-- Non-negative batch skipping is merged through implementation PR #38.
+- Non-negative batch skipping is merged through implementation PR #42.
 - Prefixing and scaling occur before optional selection; skipping follows
   selection and precedes optional limiting and grouping. Retained records
   preserve input order, and totals reflect the retained records.
@@ -11,8 +11,8 @@
   implemented.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #38; its
-  governance-only Finalization was merged through Finalization PR #39.
+- The protected `main` branch contains implementation PR #42; its
+  governance-only Finalization is pending.
 
 ## Validation
 
@@ -32,10 +32,10 @@
 
 ## Governance boundary
 
-Run `inbox-9bf64fe64700474782ccb1b2b4b2e484` delivered non-negative batch skipping
-through implementation PR #38. Its governance-only Finalization was merged
-through Finalization PR #39. Delivered `main` is
-`628e49ed7f30a0c2100d4a2effecbe5bb26bfb0d`, and the implementation diff is
+Run `inbox-52c2e7c0bd6a43e58d5a88bd2ba503d7` delivered non-negative batch skipping
+through implementation PR #42. Its governance-only Finalization is pending.
+The implementation merge on `main` is
+`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, and the implementation diff is
 confined to `mission_parser/cli.py` with no `--reverse` implementation. This
 reconciliation aligns the canonical rolling and repository handoff records
 with the implementation delivery; it does not grant merge, release,
