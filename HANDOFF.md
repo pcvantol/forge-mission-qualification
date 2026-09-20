@@ -2,7 +2,8 @@
 
 ## Current state
 
-- A positive batch `--limit` is merged through implementation PR #31.
+- Focused batch parsing and scaling, selection and limiting, and grouping
+  helpers are merged through implementation PR #34.
 - Prefixing and scaling occur before optional selection; limiting follows
   selection and precedes optional grouping. Retained records preserve input
   order, and totals reflect the limited records.
@@ -10,8 +11,9 @@
   option is rejected outside batch mode.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #31 and its
-  governance-only Finalization through Finalization PR #32.
+- The protected `main` branch contains implementation PR #34; its
+  governance-only Finalization is tracked in the run's draft Finalization pull
+  request.
 
 ## Validation
 
@@ -31,11 +33,11 @@
 
 ## Governance boundary
 
-Run `inbox-3fdf7edc094242d99dd613b41d52b33e` delivered the positive batch
-`--limit` objective through implementation PR #31 and completed
-governance-only Finalization through Finalization PR #32. This reconciliation
-aligns the canonical rolling and repository handoff records with both merged
-deliveries; it does not grant merge, release, deployment, publication, or
+Run `inbox-270aa1c1fb7a4a99ad89896e40cc5caa` delivered the focused batch-helper
+extraction through implementation PR #34. Its governance-only Finalization is
+tracked in the run's draft Finalization pull request. This reconciliation aligns
+the canonical rolling and repository handoff records with the implementation
+delivery; it does not grant merge, release, deployment, publication, or
 architecture authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.
