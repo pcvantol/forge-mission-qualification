@@ -22,13 +22,13 @@ records, while single-mode and unchanged-option behavior remain intact.
 Malformed records, non-positive quantities, and non-positive scales remain
 rejected.
 
-Protected `main` includes batch skipping through implementation PR #49 for run
-`inbox-3633db6f729249ea85e6b9bdae9554a0`. In batch mode, non-negative `--skip`
+Protected `main` includes batch skipping through implementation PR #54 for run
+`inbox-61f1923b04e04f8aaa57b2c9893dae63`. In batch mode, non-negative `--skip`
 applies after optional transformed-name selection and before optional limiting
 and grouping. Zero preserves the selected records, negative values are rejected,
 and the option is rejected outside batch mode. The implementation merge is
-`1cac8e42d0049da4db6fbff1508e11063e70eab9`; governance-only Finalization was
-merged through PR #50 at `4a832f69c4711596e25c6f90de2afd95378c831b`.
+`23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`; governance-only Finalization is
+open as draft PR #55 on the run's bounded Finalization branch.
 Any future `--reverse` objective must be derived again from accepted terminal
 delivery evidence and this reconciled repository truth.
 Exceptionally large integer input remains a known non-blocking availability
