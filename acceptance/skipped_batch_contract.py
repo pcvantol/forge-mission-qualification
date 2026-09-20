@@ -21,6 +21,22 @@ class SkippedBatchContract(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(result.stdout, "")
 
+    def test_zero_skip_preserves_prefixed_grouped_batch(self):
+        result = run_installed(
+            "--batch", "--prefix", "ripe-", "--skip", "0", "--group",
+            "pear:2,pear:3",
+        )
+        self.assertEqual((result.returncode, result.stderr), (0, ""))
+        self.assertEqual(
+            result.stdout,
+            '{"items":[{"name":"ripe-pear","quantity":5}],"total_quantity":5}\n',
+        )
+
+    def test_negative_skip_is_rejected(self):
+        result = run_installed("--batch", "--skip", "-1", "pear:2")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(result.stdout, "")
+
 
 if __name__ == "__main__":
     unittest.main()
