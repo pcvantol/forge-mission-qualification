@@ -28,7 +28,7 @@ applies after optional transformed-name selection and before optional limiting
 and grouping. Zero preserves the selected records, negative values are rejected,
 and the option is rejected outside batch mode. The implementation merge is
 `23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`; governance-only Finalization is
-open as draft PR #55 on the run's bounded Finalization branch.
+merged through PR #55 as `effaf49daba8ae1624319df994eea77dd325a903`.
 Any future `--reverse` objective must be derived again from accepted terminal
 delivery evidence and this reconciled repository truth.
 Exceptionally large integer input remains a known non-blocking availability

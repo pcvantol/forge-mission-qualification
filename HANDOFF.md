@@ -10,8 +10,8 @@
   selected records, negative values are rejected, and non-batch use is rejected.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #54; governance-only
-  Finalization is open as draft PR #55 on the run's bounded Finalization branch.
+- The protected `main` branch contains implementation PR #54 and
+  governance-only Finalization PR #55.
 
 ## Validation
 
@@ -33,8 +33,9 @@
 Run `inbox-61f1923b04e04f8aaa57b2c9893dae63` delivered batch skipping through
 implementation PR #54. The implementation merge is
 `23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`. Governance-only Finalization is
-open as draft PR #55 on the run's bounded Finalization branch. The implementation diff is
-confined to `mission_parser/cli.py` and `acceptance/skipped_batch_contract.py`.
+merged through PR #55 as `effaf49daba8ae1624319df994eea77dd325a903`. The
+implementation diff is confined to `mission_parser/cli.py` and
+`acceptance/skipped_batch_contract.py`.
 This reconciliation aligns the canonical rolling and repository handoff records with
 the completed implementation delivery; it does not grant merge, release,
 deployment, publication, or architecture authority. Any future `--reverse`
