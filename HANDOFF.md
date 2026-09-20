@@ -12,7 +12,7 @@
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
 - The protected `main` branch contains implementation PR #34; its
-  governance-only Finalization is tracked in draft Finalization PR #35.
+  governance-only Finalization was merged through Finalization PR #35.
 
 ## Validation
 
@@ -34,7 +34,7 @@
 
 Run `inbox-270aa1c1fb7a4a99ad89896e40cc5caa` delivered the focused batch-helper
 extraction through implementation PR #34. Its governance-only Finalization is
-tracked in draft Finalization PR #35. This reconciliation aligns the canonical
+merged through Finalization PR #35. This reconciliation aligns the canonical
 rolling and repository handoff records with the implementation delivery; it
 does not grant merge, release, deployment, publication, or architecture
 authority.
