@@ -27,9 +27,10 @@ Protected `main` includes non-negative batch skipping through implementation PR
 applies after optional transformed-name selection and before optional limiting
 and grouping. Input order is preserved, zero leaves the selected records
 unchanged, negative values and non-batch use are rejected, and `--reverse` is
-not implemented. Governance-only Finalization is open through Finalization PR
-#43; the implementation merge on `main` is
-`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`.
+not implemented. Governance-only Finalization is merged through Finalization
+PR #43. The implementation merge is
+`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, and the Finalization merge is
+`4a3539c46816b0ae1efdb1c0609ad97147129f0e`.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this

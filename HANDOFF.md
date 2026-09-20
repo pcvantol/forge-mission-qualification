@@ -11,8 +11,8 @@
   implemented.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #42; its
-  governance-only Finalization is open through Finalization PR #43.
+- The protected `main` branch contains implementation PR #42 and its
+  governance-only Finalization through Finalization PR #43.
 
 ## Validation
 
@@ -33,12 +33,13 @@
 ## Governance boundary
 
 Run `inbox-52c2e7c0bd6a43e58d5a88bd2ba503d7` delivered non-negative batch skipping
-through implementation PR #42. Its governance-only Finalization is open
-through Finalization PR #43. The implementation merge on `main` is
-`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, and the implementation diff is
+through implementation PR #42. Its governance-only Finalization is merged
+through Finalization PR #43. The implementation merge is
+`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, the Finalization merge is
+`4a3539c46816b0ae1efdb1c0609ad97147129f0e`, and the implementation diff is
 confined to `mission_parser/cli.py` with no `--reverse` implementation. This
 reconciliation aligns the canonical rolling and repository handoff records
-with the implementation delivery; it does not grant merge, release,
-deployment, publication, or architecture authority.
+with the completed delivery; it does not grant merge, release, deployment,
+publication, or architecture authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.
