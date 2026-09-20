@@ -62,9 +62,10 @@ rejected. `--skip` is rejected outside batch mode. The independent control is
 
 Implementation PR #42 is merged on protected `main` for run
 `inbox-52c2e7c0bd6a43e58d5a88bd2ba503d7`. Its governance-only Finalization is
-open through Finalization PR #43; the implementation merge on `main` is
-`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`. The implementation diff is
-confined to `mission_parser/cli.py` and contains no `--reverse` implementation.
+merged through Finalization PR #43. The implementation merge is
+`b4f1276213b6ddbeaaeb9f1cc1b03775221649b1`, and the Finalization merge is
+`4a3539c46816b0ae1efdb1c0609ad97147129f0e`. The implementation diff is confined
+to `mission_parser/cli.py` and contains no `--reverse` implementation.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. The run's Prompt
 History remains immutable in the Engineering Platform.
