@@ -22,12 +22,13 @@ group records, while single-mode and unchanged-option behavior remain intact.
 Malformed records, non-positive quantities, and non-positive scales remain
 rejected.
 
-Protected `main` includes batch reversal through implementation PR #64 for run
+Protected `main` includes batch reversal and its finalized engineering records
+through implementation PR #64 and Finalization PR #65 for run
 `inbox-e173300d7dac4a8c998d1c788cc6782c`. In batch mode, `--reverse` applies
 after optional transformed-name selection, skipping, and limiting, and before
 optional grouping. Omitting the option preserves retained-record order, and the
-option is rejected outside batch mode. The implementation merge is
-`008719652f4b55c47136e5ec792a906ee2826b81`.
+option is rejected outside batch mode. The delivered main revision is
+`2c157ea9b10608daf504d84c1db83711805576da`.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. Prompt History
 remains an immutable Engineering Platform record and is not copied into this

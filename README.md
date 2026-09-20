@@ -64,11 +64,15 @@ skipping, and limiting, and before optional grouping. Omitting `--reverse`
 preserves retained-record order, and the option is rejected outside batch mode.
 The independent control is `acceptance.reversed_batch_contract`.
 
-Implementation PR #64 is merged on protected `main` for run
-`inbox-e173300d7dac4a8c998d1c788cc6782c`. The implementation merge is
-`008719652f4b55c47136e5ec792a906ee2826b81`. The implementation diff is confined
-to `mission_parser/cli.py`. Any future `--reverse` changes must be derived again
-from accepted terminal delivery evidence and this reconciled repository truth.
+Implementation PR #64 and Finalization PR #65 are merged on protected `main`
+for run `inbox-e173300d7dac4a8c998d1c788cc6782c`. The delivered main revision is
+`2c157ea9b10608daf504d84c1db83711805576da`. The implementation diff is confined
+to `mission_parser/cli.py`. The dedicated reverse control directly verifies
+reversal after skipping and limiting and the batch-only option boundary. Source
+inspection establishes placement after selection and before grouping; the full
+acceptance surface provides regression coverage. Any future `--reverse`
+changes must be derived again from accepted terminal delivery evidence and
+this reconciled repository truth.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. The run's Prompt
 History remains immutable in the Engineering Platform.
