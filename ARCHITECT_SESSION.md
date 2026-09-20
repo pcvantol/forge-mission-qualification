@@ -20,7 +20,6 @@ completed without findings. The implementation delta is limited to
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
-#38. Governance-only Finalization is being prepared in the draft Finalization
-pull request for run `inbox-9bf64fe64700474782ccb1b2b4b2e484`. Prompt History
-remains immutable in the Engineering Platform and is not reproduced or revised
-here.
+#38. Governance-only Finalization is open in draft Finalization PR #39 for run
+`inbox-9bf64fe64700474782ccb1b2b4b2e484`. Prompt History remains immutable in the
+Engineering Platform and is not reproduced or revised here.

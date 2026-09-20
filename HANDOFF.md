@@ -12,8 +12,7 @@
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
 - The protected `main` branch contains implementation PR #38; its
-  governance-only Finalization is being prepared in this run's draft
-  Finalization pull request.
+  governance-only Finalization is open in draft Finalization PR #39.
 
 ## Validation
 
@@ -35,9 +34,9 @@
 
 Run `inbox-9bf64fe64700474782ccb1b2b4b2e484` delivered non-negative batch skipping
 through implementation PR #38. Its governance-only Finalization is being
-prepared in the draft Finalization pull request. This reconciliation aligns the
-canonical rolling and repository handoff records with the implementation
-delivery; it does not grant merge, release, deployment, publication, or
-architecture authority.
+prepared in draft Finalization PR #39. This reconciliation aligns the canonical
+rolling and repository handoff records with the implementation delivery; it
+does not grant merge, release, deployment, publication, or architecture
+authority.
 Engineering Platform Prompt History is immutable and remains the source for the
 run's execution conversation.

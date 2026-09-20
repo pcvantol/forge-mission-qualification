@@ -62,7 +62,7 @@ rejected. `--skip` is rejected outside batch mode. The independent control is
 
 Implementation PR #38 is merged on protected `main` for run
 `inbox-9bf64fe64700474782ccb1b2b4b2e484`. Its governance-only Finalization is
-being prepared in the run's draft Finalization pull request.
+open in draft Finalization PR #39.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. The run's Prompt
 History remains immutable in the Engineering Platform.
