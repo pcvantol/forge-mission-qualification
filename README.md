@@ -62,7 +62,7 @@ rejected. `--skip` is rejected outside batch mode. The independent control is
 Implementation PR #54 is merged on protected `main` for run
 `inbox-61f1923b04e04f8aaa57b2c9893dae63`. The implementation merge is
 `23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`; governance-only Finalization is
-prepared on the run's bounded Finalization branch. The implementation diff is
+open as draft PR #55 on the run's bounded Finalization branch. The implementation diff is
 confined to `mission_parser/cli.py` and `acceptance/skipped_batch_contract.py`
 and does not implement `--reverse`. Any future `--reverse` objective must be
 derived again from accepted terminal delivery evidence and this reconciled repository truth.

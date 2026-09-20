@@ -21,7 +21,7 @@ without findings. The implementation delta is limited to
 The implementation is merged on protected `main` through implementation PR #54
 for run `inbox-61f1923b04e04f8aaa57b2c9893dae63`. The implementation merge is
 `23dc603dc2c4291dff715a9ce70a5e237b6d5f2d`. Governance-only Finalization is
-prepared on the run's bounded Finalization branch.
+open as draft PR #55 on the run's bounded Finalization branch.
 Any future `--reverse` objective must be derived again from accepted terminal
 delivery evidence and this reconciled repository truth. Prompt History remains
 immutable in the Engineering Platform and is not reproduced or revised here.
