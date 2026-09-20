@@ -53,11 +53,16 @@ preserving the selected records' input order. Omitting `--limit` preserves the
 existing output, and the option is rejected outside batch mode. The independent
 control is `acceptance.limited_selected_batch_contract`.
 
-Implementation PR #34 is merged on protected `main` for run
-`inbox-270aa1c1fb7a4a99ad89896e40cc5caa`. It extracts focused batch parsing and
-scaling, selection and limiting, and grouping helpers without changing the
-installed batch contracts. Governance-only Finalization for this objective is
-merged through Finalization PR #35.
+In batch mode, non-negative `--skip` is applied after optional selection and
+before optional limiting and grouping. Retained records preserve their input
+order, zero leaves the selected records unchanged, and negative values are
+rejected. `--skip` is rejected outside batch mode. The independent control is
+`acceptance.skipped_batch_contract`. This increment does not implement
+`--reverse`.
+
+Implementation PR #38 is merged on protected `main` for run
+`inbox-9bf64fe64700474782ccb1b2b4b2e484`. Its governance-only Finalization is
+open in draft Finalization PR #39.
 Exceptionally large integer input remains a known non-blocking availability
 observation because input size is not explicitly bounded. The run's Prompt
 History remains immutable in the Engineering Platform.

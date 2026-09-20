@@ -2,24 +2,24 @@
 
 ## Delivered increment
 
-Implementation PR #34 extracted focused helpers for batch parsing and scaling,
-selection and limiting, and grouping. The refactor preserves the installed
-batch contracts, including selection before limiting, limiting before optional
-grouping, input order, and rejection of `--limit` without `--batch`.
+Implementation PR #38 adds a non-negative batch `--skip` offset after optional
+selection and before optional limiting and grouping. It preserves input order
+and existing behavior when omitted, accepts zero without changing the selected
+records, rejects negative values and non-batch use, and does not implement
+`--reverse`.
 
 ## Evidence posture
 
-The delivered candidate passed the dedicated limited-selection, selection, and
-batch-record controls and the complete acceptance surface. Independent Quality
-and Security reviews completed without findings. Exceptionally large integer
-input remains a known non-blocking availability observation because input size
-is not explicitly bounded. The implementation delta is limited to
-`mission_parser/cli.py`.
+The delivered candidate passed the dedicated skip control, 21 explicitly
+enumerated regression and skip tests, and focused zero/negative edge checks.
+The complete acceptance surface passed except for the intentionally excluded
+later-action reverse behavior. Independent Quality and Security reviews
+completed without findings. The implementation delta is limited to
+`mission_parser/cli.py` and contains no reverse implementation.
 
 ## Handoff
 
 The implementation is merged on protected `main` through implementation PR
-#34. Governance-only Finalization for the focused batch-helper extraction was
-merged through Finalization PR #35 for run
-`inbox-270aa1c1fb7a4a99ad89896e40cc5caa`. Prompt History remains immutable in the
+#38. Governance-only Finalization is open in draft Finalization PR #39 for run
+`inbox-9bf64fe64700474782ccb1b2b4b2e484`. Prompt History remains immutable in the
 Engineering Platform and is not reproduced or revised here.

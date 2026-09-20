@@ -2,24 +2,24 @@
 
 ## Current state
 
-- Focused batch parsing and scaling, selection and limiting, and grouping
-  helpers are merged through implementation PR #34.
-- Prefixing and scaling occur before optional selection; limiting follows
-  selection and precedes optional grouping. Retained records preserve input
-  order, and totals reflect the limited records.
-- Existing behavior remains unchanged when `--limit` is omitted, and the
-  option is rejected outside batch mode.
+- Non-negative batch skipping is merged through implementation PR #38.
+- Prefixing and scaling occur before optional selection; skipping follows
+  selection and precedes optional limiting and grouping. Retained records
+  preserve input order, and totals reflect the retained records.
+- Existing behavior remains unchanged when `--skip` is omitted or zero, and
+  negative values and non-batch use are rejected. `--reverse` is not
+  implemented.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #34; its
-  governance-only Finalization was merged through Finalization PR #35.
+- The protected `main` branch contains implementation PR #38; its
+  governance-only Finalization is open in draft Finalization PR #39.
 
 ## Validation
 
-- `acceptance.limited_selected_batch_contract` covers positive limiting after
-  selection and before grouping, preserved order, scaling composition, and the
-  batch-only option boundary. `acceptance.selected_batch_contract` continues to
-  cover the underlying selection behavior.
+- `acceptance.skipped_batch_contract` covers skipping after selection and
+  before limiting, preserved order, and the batch-only option boundary.
+- Focused edge checks cover zero as an unchanged offset and rejection of a
+  negative offset without output.
 - Prefixing, grouping, scaling, record, positive-quantity, and batch controls
   remain the acceptance regression surface.
 - Run the complete acceptance surface with
@@ -32,9 +32,9 @@
 
 ## Governance boundary
 
-Run `inbox-270aa1c1fb7a4a99ad89896e40cc5caa` delivered the focused batch-helper
-extraction through implementation PR #34. Its governance-only Finalization is
-merged through Finalization PR #35. This reconciliation aligns the canonical
+Run `inbox-9bf64fe64700474782ccb1b2b4b2e484` delivered non-negative batch skipping
+through implementation PR #38. Its governance-only Finalization is being
+prepared in draft Finalization PR #39. This reconciliation aligns the canonical
 rolling and repository handoff records with the implementation delivery; it
 does not grant merge, release, deployment, publication, or architecture
 authority.
