@@ -2,7 +2,7 @@
 
 ## Current state
 
-- Batch skipping is merged through implementation PR #58.
+- Batch skipping is merged through implementation PR #61.
 - Prefixing and scaling occur before optional selection; skipping follows
   selection, and limiting and optional grouping follow skipping. Totals reflect
   the retained records.
@@ -10,8 +10,8 @@
   selected records, negative values are rejected, and non-batch use is rejected.
 - Invalid records, non-positive quantities, and non-positive scales are
   rejected without a result.
-- The protected `main` branch contains implementation PR #58; governance-only
-  Finalization is open as draft PR #59 on the run's bounded Finalization branch.
+- The protected `main` branch contains implementation PR #61; governance-only
+  Finalization is being prepared on the run's bounded Finalization branch.
 
 ## Validation
 
@@ -30,10 +30,10 @@
 
 ## Governance boundary
 
-Run `inbox-044602b879d14e7b9719df78f6111bed` delivered batch skipping through
-implementation PR #58. The implementation merge is
-`3909094fed1e2edc23cfae30ab0f9cceccc7c1bf`. Governance-only Finalization is
-open as draft PR #59 on the run's bounded Finalization branch. The implementation diff is
+Run `inbox-8c39cd5b65e84824a05d5ed97cdadc76` delivered batch skipping through
+implementation PR #61. The implementation merge is
+`ea594372bbc0973078836b39ade97e6440cd2f50`. Governance-only Finalization is
+being prepared on the run's bounded Finalization branch. The implementation diff is
 confined to `mission_parser/cli.py`.
 This reconciliation aligns the canonical rolling and repository handoff records with
 the completed implementation delivery; it does not grant merge, release,
